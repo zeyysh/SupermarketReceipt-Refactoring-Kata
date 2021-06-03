@@ -3,16 +3,14 @@
 On this branch, the exercise is to incrementally add changes, running the tests after each one. 
 The end state should be the same as the branch 'with_broken_tests', you just get there in small steps.
 
-To apply each incremental change, use these commands:
+To apply each incremental change, merge in a 'pick' branch:
 
-    git apply pick1.patch
-    git apply pick2.patch
-    git apply pick3.patch
-    git apply pick4.patch
-    git apply pick5.patch
-    git apply pick6.patch
+    git merge pick1
+    git merge pick2
+    git merge pick3
+    git merge pick4
+    git merge pick5
+    git merge pick6
+
+Think of each pick branch as a feature branch where someone has developed one feature but didn't remember to update the tests.
     
-Note: to un-apply a patch use:
-
-    git apply -R pickX.patch
-       
