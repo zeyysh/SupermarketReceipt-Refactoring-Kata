@@ -2,7 +2,8 @@ from enum import Enum
 
 
 class Product:
-    def __init__(self, name, weight, height, length, sku):
+    def __init__(self, name, weight, height, length, sku, width):
+        self.width = width
         self.sku = sku
         self.length = length
         self.height = height
@@ -33,6 +34,7 @@ class SpecialOfferType(Enum):
     TWO_FOR_AMOUNT = 3
     FIVE_FOR_AMOUNT = 4
 
+
 class Offer:
     def __init__(self, offer_type, product, argument):
         self.offer_type = offer_type
@@ -41,7 +43,10 @@ class Offer:
 
 
 class Discount:
-    def __init__(self, product, start_date, end_date, min_quantity, max_quantity, discount_amount, discount_percent):
+    def __init__(self, product, start_date, end_date, min_quantity, max_quantity, discount_amount, discount_percent,
+                 repeat_max):
+        self.repeat_max = repeat_max
+        self.start_date = start_date
         self.end_date = end_date
         self.min_quantity = min_quantity
         self.max_quantity = max_quantity
