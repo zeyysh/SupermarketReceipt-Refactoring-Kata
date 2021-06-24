@@ -2,9 +2,18 @@ from enum import Enum
 
 
 class Product:
-    def __init__(self, name, unit):
+    def __init__(self, name, weight, height, length, sku):
+        self.sku = sku
+        self.length = length
+        self.height = height
+        self.weight = weight
         self.name = name
+
+
+class ProductSale:
+    def __init__(self, price, unit):
         self.unit = unit
+        self.price = price
 
 
 class ProductQuantity:
@@ -32,7 +41,10 @@ class Offer:
 
 
 class Discount:
-    def __init__(self, product, description, discount_amount):
+    def __init__(self, product, start_date, end_date, min_quantity, max_quantity, discount_amount, discount_percent):
+        self.end_date = end_date
+        self.min_quantity = min_quantity
+        self.max_quantity = max_quantity
+        self.discount_percent = discount_percent
         self.product = product
-        self.description = description
         self.discount_amount = discount_amount
